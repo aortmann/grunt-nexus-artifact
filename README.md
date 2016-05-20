@@ -8,7 +8,7 @@
 Nexus does really well with binary files. The idea is a repository can build and publish artifacts and other repositories can pull down those artifacts and extract them. Built files don't need to be committed to git, which take up most of the space in git repositories.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.0`
+This plugin requires Grunt `>=0.4.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -157,7 +157,7 @@ nexus: {
       curl: false,
       publish: [{
           id: 'com.mycompany.js:built-artifact:tgz',
-          version: 'my-version', 
+          version: 'my-version',
           path: 'dist/',
           username: 'admin',
           password: 'admin123'
@@ -202,10 +202,10 @@ nexus: {
     url: 'http://nexus.google.com:8080',
     repository: 'jslibraries',
     verify: [
-      { 
+      {
         id: 'com.google.js:jquery:tgz:',
         version: '<%= buildVersion %>',
-        path: 'public/lib/jquery' 
+        path: 'public/lib/jquery'
       }
     ]
   }
@@ -219,9 +219,9 @@ nexus: {
     url: 'http://nexus.google.com:8080',
     repository: 'jslibraries',
     verify: [
-      { 
+      {
         id: 'com.google.js:jquery:tgz:1.8.0',
-        path: 'public/lib/jquery' 
+        path: 'public/lib/jquery'
       }
     ]
   }

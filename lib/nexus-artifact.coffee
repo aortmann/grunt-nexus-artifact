@@ -1,7 +1,7 @@
 
 module.exports = (grunt) -> class NexusArtifact
 
-  _ = grunt.util._
+  _ = require 'lodash'
 
   # If an ID string is provided, this will return a config object suitable for creation of a NexusArtifact object
   @fromString = (idString) ->
