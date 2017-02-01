@@ -23,7 +23,7 @@ module.exports = (grunt) ->
 
     processes = []
 
-    if !@args.length or _.includes @args, 'fetch'
+    if !@args.length or _.contains @args, 'fetch'
       _.each options.fetch, (cfg) ->
         # get the base nexus path
         _.extend cfg, NexusArtifact.fromString(cfg.id) if cfg.id
@@ -34,7 +34,7 @@ module.exports = (grunt) ->
 
         processes.push util.download(artifact, cfg.path)
 
-    if @args.length and _.includes @args, 'publish'
+    if @args.length and _.contains @args, 'publish'
       _.each options.publish, (cfg) =>
         artifactCfg = {}
         _.extend artifactCfg, NexusArtifact.fromString(cfg.id), cfg if cfg.id
@@ -44,7 +44,7 @@ module.exports = (grunt) ->
         artifact = new NexusArtifact artifactCfg
         processes.push util.publish(artifact, @files, { path: cfg.path, curl: options.curl, credentials: { username: options.username, password: options.password }})
 
-    if @args.length and _.includes @args, 'verify'
+    if @args.length and _.contains @args, 'verify'
       _.each options.verify, (cfg) =>
 
         newConfig = NexusArtifact.fromString(cfg.id)
